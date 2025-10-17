@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampard Kipyegon - Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">LampardKipyegon</h1>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label for="theme-toggle"></label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="side-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </aside>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-reveal>
+            <h1 class="hero-title">Hi, I'm <span class="highlight">Lampard Kipyegon</span></h1>
+            <p class="hero-subtitle">Full Stack Developer & UI/UX Designer</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-secondary">Hire Me</a>
+            </div>
+        </div>
+        <canvas id="hero-orb" class="hero-orb" aria-hidden="true"></canvas>
+        <div class="hero-particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About</h2>
+        <div class="about-grid" data-reveal>
+            <div class="about-photo glass">
+                <img src="my_pic.jpeg" alt="Portrait of Lampard Kipyegon" class="profile-pic">
+            </div>
+            <div class="about-details glass">
+                <h3>Lampard Kipyegon</h3>
+                <p>Date of birth: March 8th 2007 (18 yo)</p>
+                <div class="contact-list">
+                    <a href="mailto:tk654001@gmail.com" class="contact-item">Email: tk654001@gmail.com</a>
+                    <a href="tel:+254701219870" class="contact-item">Phone: +254701219870</a>
+                    <a href="https://x.com/shad0wlord56" target="_blank" rel="noopener" class="contact-item">X: @shad0wlord56</a>
+                    <a href="https://www.linkedin.com/in/pyegon-kirui" target="_blank" rel="noopener" class="contact-item">LinkedIn: Pyegon Kirui</a>
+                    <a href="https://instagram.com/vexlampard" target="_blank" rel="noopener" class="contact-item">Instagram: @vexlampard</a>
+                </div>
+                <p class="about-bio">I build performant, accessible web apps with Python. I enjoy clean architecture and data-driven solutions.</p>
+                <div class="skills-grid">
+                    <div class="skill">Python Syntax <span class="level">Expert</span></div>
+                    <div class="skill">Object-Oriented Programming <span class="level">Advanced</span></div>
+                    <div class="skill">Data Structures <span class="level">Advanced</span></div>
+                    <div class="skill">NumPy <span class="level">Advanced</span></div>
+                    <div class="skill">Pandas <span class="level">Advanced</span></div>
+                    <div class="skill">Matplotlib <span class="level">Advanced</span></div>
+                    <div class="skill">Scikit-Learn <span class="level">Learning</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid" data-reveal>
+            <div class="project-card">
+                <h3>E-Commerce Site</h3>
+                <p>Modern React + Stripe integration</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Generator</h3>
+                <p>Static site generator with markdown content</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Realtime Chat</h3>
+                <p>WebSocket chat with presence and typing indicators</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="achievements">
+        <h2>Me receiving my Zoho certificate</h2>
+        <div class="achievements-grid" data-reveal>
+            <figure class="achievement-card glass">
+                <img src="receiving_zoho_certificate01.JPG" alt="Receiving Zoho certificate">
+            </figure>
+            <figure class="achievement-card glass">
+                <img src="receiving_zoho_ceretificate02.JPG" alt="Receiving Zoho certificate">
+            </figure>
+            <figure class="achievement-card glass">
+                <img src="receiving_zoho_ceretificate03.JPG" alt="Receiving Zoho certificate">
+            </figure>
+            <figure class="achievement-card glass">
+                <img src="receiving_zoho_ceretificate04.JPG" alt="Receiving Zoho certificate">
+            </figure>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Let's Work Together</h2>
+        <form id="contact-form" class="contact-form glass" data-reveal>
+            <input type="text" id="cf-name" name="name" placeholder="Your Name" required>
+            <input type="email" id="cf-email" name="email" placeholder="Your Email" required>
+            <textarea id="cf-message" name="message" placeholder="Your Message" required></textarea>
+            <div class="contact-actions">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <a class="btn btn-secondary" href="https://github.com/Lampard7crypt" target="_blank" rel="noopener">GitHub: Lampard7crypt</a>
+            </div>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
