@@ -150,17 +150,61 @@ if ('IntersectionObserver' in window) {
     revealEls.forEach(el => el.classList.add('is-visible'));
 }
 
-// Contact form: open mail client with prefilled content
+// Email validation function
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Contact form: handle form submission with FormSubmit
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        
         const name = document.getElementById('cf-name').value.trim();
         const email = document.getElementById('cf-email').value.trim();
         const message = document.getElementById('cf-message').value.trim();
-        const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-        window.location.href = `mailto:tk654001@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Validate email format
+        if (!isValidEmail(email)) {
+            alert('Please enter a valid email address (e.g., example@gmail.com)');
+            return;
+        }
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Submit form to FormSubmit
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm)
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success message
+                document.getElementById('success-message').style.display = 'block';
+                contactForm.style.display = 'none';
+                
+                // Scroll to success message
+                document.getElementById('success-message').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Sorry, there was an error sending your message. Please try again.');
+            
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
     });
 }
 

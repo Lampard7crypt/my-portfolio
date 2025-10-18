@@ -125,10 +125,22 @@
     <!-- Contact -->
     <section id="contact" class="contact">
         <h2>Let's Work Together</h2>
-        <form id="contact-form" class="contact-form glass" data-reveal>
+        <form id="contact-form" class="contact-form glass" data-reveal action="https://formsubmit.co/tk654001@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
             <input type="text" id="cf-name" name="name" placeholder="Your Name" required>
             <input type="email" id="cf-email" name="email" placeholder="Your Email" required>
             <textarea id="cf-message" name="message" placeholder="Your Message" required></textarea>
+
+            <!-- Success message container -->
+            <div id="success-message" class="success-message" style="display: none;">
+                <h3>Thanks for the feedback!</h3>
+                <p>Your message has been sent successfully. I'll get back to you soon!</p>
+            </div>
+
             <div class="contact-actions">
                 <button type="submit" class="btn btn-primary">Send Message</button>
                 <a class="btn btn-secondary" href="https://github.com/Lampard7crypt" target="_blank" rel="noopener">GitHub: Lampard7crypt</a>

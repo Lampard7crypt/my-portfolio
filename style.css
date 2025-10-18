@@ -365,6 +365,32 @@ h2 {
     margin-top: 8px;
 }
 
+/* Success message styling */
+.success-message {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.success-message h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.success-message p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 /* Achievements */
 .achievements-grid {
     max-width: 1200px;
