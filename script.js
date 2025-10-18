@@ -185,9 +185,11 @@ if (contactForm) {
         })
         .then(response => {
             if (response.ok) {
-                // Show success message
+                // Show success message below form
                 document.getElementById('success-message').style.display = 'block';
-                contactForm.style.display = 'none';
+                
+                // Reset form fields
+                contactForm.reset();
                 
                 // Scroll to success message
                 document.getElementById('success-message').scrollIntoView({ 
